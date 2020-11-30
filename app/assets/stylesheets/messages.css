@@ -8,20 +8,50 @@
   background-color: #253141;
 }
 
-.main_chat{
-  width: calc( 100vw - 300px );
-  background-color: #ffffff;
-}
-
 .sb_header{
   height: 100px;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user_name a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.chat_create_button{
+  padding: 14px;
+  border: 1px solid lightblue;
+}
+
+.chat_create_button a{
+  font-size: 10px;
+  color: deepskyblue;
+  text-decoration: none;
 }
 
 .sb_main{
   background-color: #2F3E51;
   height: calc( 100vh - 100px);
   padding: 0 20px;
+  overflow: scroll;
+}
+
+.chat_room{
+  padding: 20px 0 40px;
+}
+
+.chat_room a{
+  color: white;
+  text-decoration: none;
+}
+
+.main_chat{
+  width: calc( 100vw - 300px );
+  background-color: #ffffff;
 }
 
 .mc_header{
