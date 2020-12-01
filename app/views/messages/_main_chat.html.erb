@@ -1,37 +1,25 @@
 <div class="mc_header">
   <div class="chat_title">
-    hogehoge
+    <%= @room.name %>
   </div>
   <div class="chat_delete_button">
-    <a href="#">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: :delete%>
   </div>
 </div>
 
 <div class="mc_main">
-  <div class="message">
-    <div class="message_header">
-      <div class="message_name">
-        Tom
-      </div>
-      <div class="message_date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="message_main">
-      おはよう
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
 <div class="mc_footer">
-  <form>
+  <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
     <div class="form_input">
-      <input type="text" placeholder="type a message" class="message_form">
+      <%= f.text_field :content, class: 'message_form', placeholder: 'type a message' %>
       <label class="img_button">
         <span>画像</span>
-        <input type="file" class="hidden">
+        <%= f.file_field :image, class: 'hidden' %>
       </label>
     </div>
-    <input type="submit" value="送信" class="send_button">
-  </form>
+    <%= f.submit '送信', class: 'send_button' %>
+  <% end %>
 </div>
