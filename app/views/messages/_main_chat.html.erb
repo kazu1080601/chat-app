@@ -8,19 +8,7 @@
 </div>
 
 <div class="mc_main">
-  <div class="message">
-    <div class="message_header">
-      <div class="message_name">
-        Tom
-      </div>
-      <div class="message_date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="message_main">
-      おはよう
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
 <div class="mc_footer">
