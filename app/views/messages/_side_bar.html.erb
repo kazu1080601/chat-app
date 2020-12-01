@@ -1,6 +1,6 @@
 <div class="sb_header">
   <div class="user_name">
-    <a href="#">Tom</a>
+    <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class="chat_create_button">
     <a href="#">チャットを作成する</a>
