@@ -24,14 +24,14 @@
 </div>
 
 <div class="mc_footer">
-  <form>
+  <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
     <div class="form_input">
-      <input type="text" placeholder="type a message" class="message_form">
+      <%= f.text_field :content, class: 'message_form', placeholder: 'type a message' %>
       <label class="img_button">
         <span>画像</span>
-        <input type="file" class="hidden">
+        <%= f.file_field :image, class: 'hidden' %>
       </label>
     </div>
-    <input type="submit" value="送信" class="send_button">
-  </form>
+    <%= f.submit '送信', class: 'send_button' %>
+  <% end %>
 </div>
