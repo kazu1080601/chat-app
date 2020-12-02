@@ -16,7 +16,6 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     room = Room.find(params[:id])
     room.destroy
     redirect_to root_path
